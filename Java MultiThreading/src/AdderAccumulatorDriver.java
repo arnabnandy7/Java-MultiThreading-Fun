@@ -5,7 +5,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.LongAccumulator;
 import java.util.concurrent.atomic.LongAdder;
-
+/**
+ * 
+ * @author royan
+ *
+ */
 public class AdderAccumulatorDriver extends Thread {
 
 	private static final int WAITING_TIME = 500;
