@@ -22,6 +22,7 @@ public class AdderAccumulatorDriver extends Thread {
 	private AtomicInteger counter;
 	private LongAdder longAdder;
 	private LongAccumulator longAccumulator;
+	
 	private String controlFlag;
 
 	@Override
