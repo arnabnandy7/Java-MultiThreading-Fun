@@ -1,4 +1,3 @@
-import java.awt.SecondaryLoop;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -8,7 +7,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * 
+ * @author Aniket Roy
+ *
+ */
 public class ExecutorServiceExample {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -16,7 +19,6 @@ public class ExecutorServiceExample {
 		int cpuCores = Runtime.getRuntime().availableProcessors();
 		ExecutorService executorService = Executors.newFixedThreadPool(cpuCores);
 		List<Callable<?>> tasks = new ArrayList<Callable<?>>();
-		List<Callable<?>> schedulingTask = new ArrayList<Callable<?>>();
 		int taskSize =0;// 100000;
 		
 		for (int i = 0; i < taskSize; i++) {

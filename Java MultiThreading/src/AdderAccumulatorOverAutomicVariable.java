@@ -1,10 +1,11 @@
-import java.time.Duration;
-import java.time.Instant;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAccumulator;
 import java.util.concurrent.atomic.LongAdder;
-
+/**
+ * 
+ * @author royan
+ *
+ */
 public class AdderAccumulatorOverAutomicVariable implements Runnable {
 	
 	static final String ACCUMULATOR = "ACCUMULATOR";

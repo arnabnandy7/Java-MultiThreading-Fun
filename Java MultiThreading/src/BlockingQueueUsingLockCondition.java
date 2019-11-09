@@ -4,6 +4,12 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 
+ * @author Aniket Roy
+ *
+ * @param <E>
+ */
 public class BlockingQueueUsingLockCondition<E> {
 
 	//Quere and it's size
