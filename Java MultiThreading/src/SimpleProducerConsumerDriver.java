@@ -39,7 +39,7 @@ public class SimpleProducerConsumerDriver {
 					try {
 						String item = blockingQueue.get();
 						System.out.println("--Consumer retrived item : "+item);
-						Thread.sleep(1000);
+						Thread.sleep(5000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
