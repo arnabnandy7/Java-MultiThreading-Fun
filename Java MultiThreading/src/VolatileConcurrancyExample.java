@@ -1,9 +1,10 @@
 
 
+
 public class VolatileConcurrancyExample  {
 
 	//int count = 0; - visibility problem
-	 int count = 0;
+	volatile  int count = 0;
 	
 	/**
 	 * Reader methood to Read the value

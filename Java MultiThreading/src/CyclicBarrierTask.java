@@ -12,6 +12,9 @@ public class CyclicBarrierTask implements Runnable {
 
 	@Override
 	public void run() {
+		int i = 0;
+		while(i<4) {
+			i++;
 		try {
 			Thread.sleep(new Random().nextInt(2000));
 			int returnValue = new Random().nextInt(10);
@@ -23,6 +26,7 @@ public class CyclicBarrierTask implements Runnable {
 		} catch (InterruptedException | BrokenBarrierException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
 		}
 
 	}

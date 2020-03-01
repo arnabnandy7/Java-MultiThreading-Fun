@@ -10,7 +10,7 @@ public class ReentrantDriver {
 		int threadSize = 10;
 		ExecutorService executorService = Executors.newFixedThreadPool(4);
 		
-		ReentrantLock lock = new ReentrantLock();
+		ReentrantLock lock = new ReentrantLock(true);
 		ReentrantTask task = new ReentrantTask(lock);
 		for (int i = 0; i < threadSize; i++) {
 			

@@ -1,4 +1,5 @@
 
+
 public class JoinExample {
 
 	public JoinExample() {
@@ -44,9 +45,11 @@ public static void main(String[] args) throws InterruptedException {
 	
 	final Thread th1 = new Thread(r1);
 	final Thread th2 = new Thread(r2);
+	System.out.println("*****Main thread started****");
 	th1.start();
-	th2.start();
 	th1.join();
+	th2.start();
+	
 	th2.join();
 	System.out.println("---Main thread ended------");
 }

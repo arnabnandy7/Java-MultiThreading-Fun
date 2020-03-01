@@ -1,4 +1,5 @@
 
+
 public class VolatileConcurrancyDriver extends Thread {
 
 	
@@ -48,6 +49,7 @@ public class VolatileConcurrancyDriver extends Thread {
 		//starting the threads
 		readerThread.start();
 		writerThread.start();
+		System.out.println("***ended***");
 		
 	}
 }

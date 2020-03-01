@@ -1,4 +1,5 @@
 
+
 public class YieldExample {
 
 	public YieldExample() {
@@ -33,7 +34,8 @@ public class YieldExample {
 		
 		System.out.println("Thread 2 strted ");
 		for (int i = 0; i <20; i++) {
-				Thread.yield();
+			System.out.println("***Yiled going to get called---"+i);
+				Thread.currentThread().yield();
 				
 			System.out.println("TH2 - "+i);
 		}

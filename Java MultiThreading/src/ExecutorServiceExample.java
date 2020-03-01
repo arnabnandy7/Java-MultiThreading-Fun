@@ -17,6 +17,7 @@ public class ExecutorServiceExample {
 	public static void main(String[] args) throws InterruptedException {
 //Identifying the Number of cores in System
 		int cpuCores = Runtime.getRuntime().availableProcessors();
+		//ExecutorService executorService = Executors.newSingleThreadExecutor();
 		ExecutorService executorService = Executors.newFixedThreadPool(cpuCores);
 		List<Callable<?>> tasks = new ArrayList<Callable<?>>();
 		int taskSize =0;// 100000;
@@ -46,6 +47,7 @@ public class ExecutorServiceExample {
 		executorServiceRandomPool.shutdown();
 
 		ExecutorService executorServiceCached = Executors.newCachedThreadPool();
+		
 		
 //Calling executor service and wait for result
 		Instant startCached = Instant.now();

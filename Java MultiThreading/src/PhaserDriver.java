@@ -1,27 +1,28 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
-import java.util.concurrent.atomic.LongAdder;
 
 public class PhaserDriver {
-	public static final LongAdder results = new LongAdder();
 	public static void main(String[] args) throws InterruptedException {
-		int threadSize = 50;
-		ExecutorService executorService = Executors.newCachedThreadPool();
-		
-		Phaser phaser = new Phaser(50);
-	
-		PhaserTask task = new PhaserTask(phaser);
-		PhaserTask selfRegisteringTask = new PhaserTask(phaser, true); 
-		
+		int threadSize = 5;
+		ExecutorService executorService = Executors.newFixedThreadPool(5);	
+		boolean isCountDownLatch = false; // change to test
+		boolean isCyclicBarrier = true;
+		Phaser phaser = new Phaser(5);
+		PhaserTask task = new PhaserTask(phaser, isCountDownLatch, isCyclicBarrier);
 		for (int i = 0; i < threadSize; i++) {
 			executorService.submit(task);
-			executorService.submit(selfRegisteringTask);
 		}
-		
-		phaser.arriveAndAwaitAdvance();//If we do self registration
-		phaser.awaitAdvance(50);//For no self registration
 		executorService.shutdown();
+		
+		if(isCountDownLatch) {
+		System.out.println("---now waiting for countdown latch -----"+phaser.getPhase());
+		phaser.awaitAdvance(0);
 		System.out.println("-----Main thread ended---------");
+		}
+		if(isCyclicBarrier)
+		{
+			System.out.println("-----Main thread ended---------");	
+		}
 	}
 }
