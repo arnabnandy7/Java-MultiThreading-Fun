@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 /**
  * 
@@ -18,6 +19,7 @@ public class ThreadLocalDriver {
 			return new SimpleDateFormat("yyyy-MM-dd");	
 		};
 		
+		
 	};
 
 
@@ -28,10 +30,18 @@ public class ThreadLocalDriver {
 				
 				@Override
 				public void run() {
+					Random r = new Random();
+					try {
+						Thread.sleep(r.nextInt(3000)+2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				Date dt = new Date();
 				System.out.println("Thread is : "+Thread.currentThread().getId()+"----Date format-----"+threadLocal.get().format(dt));
 				System.out.println("Thread id : "+Thread.currentThread().getId()+"-----Retriving again ----"+threadLocal.get().format(dt));
-				threadLocal.remove();	
+				threadLocal.set(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"));
+				//threadLocal.remove();
 				}
 			});
 			th.start();
