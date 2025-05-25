@@ -1,7 +1,7 @@
 
 # Java-MultiThreading-Fun
-This Repository contents some cool examples to showcase multi threading capabilities of Java 
-#Author : Aniket Roy
-Last Updated : 11/09/2019
+This Repository contains some cool examples to showcase the multi-threading capabilities of Java 
 
-<!-- GitAds-Verify: J9PBMDCPVQDUIECR1SFYRASLE1DLW1VQ -->
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=arnabnandy7/java-multithreading-fun@github)](https://gitads.dev/v1/ad-track?source=arnabnandy7/java-multithreading-fun@github)
+
